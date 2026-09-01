@@ -25,7 +25,7 @@ class arithmetic{
 };
 
 int main(){
-    arithmetic<int> ar(5,6);
+    arithmetic<float> ar(5.6,6.4);
 
     cout<<ar.add()<<endl;
     cout<<ar.sub();
