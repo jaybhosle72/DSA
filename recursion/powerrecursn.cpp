@@ -14,22 +14,57 @@ using namespace std;
 // }
 
 // better solution:
-int power(int m,int n){
-    if(n%2==0){
-        if(n==0){
-            return 1;
+// int power(int m,int n){
+//     if(n%2==0){
+//         if(n==0){
+//             return 1;
+//         }
+//         else{
+//             return power(m*m,n/2);
+//         }
+//     }
+//     else{
+//         return m*power(m*m,(n-1)/2);
+//     }
+// }    
+
+
+// int main(){
+//     cout<<power(2,8);
+//     return 0;
+// }
+
+// leetcode solution :
+class Solution{
+public:
+    double mypow(double x, int n){
+        long long N=n;
+        if(N<0){
+            x = 1 / x;
+            N = -N;
+        }
+        if(N%2==0){
+
+            if(N==0){
+                return 1;
+            }
+            else{
+                return mypow(x*x,N/2);
+            }
         }
         else{
-            return power(m*m,n/2);
+            return x*mypow(x*x,(N-1)/2);
         }
     }
-    else{
-        return m*power(m*m,(n-1)/2);
-    }
-}    
-
-
+};
 int main(){
-    cout<<power(2,8);
+    Solution s;
+    cout<<s.mypow(2.00,-2);
     return 0;
 }
+
+
+
+
+
+
