@@ -25,19 +25,37 @@ using namespace std;
 
 // using homer's rule
 
-int e(int x,int n){
-    static int s=1;
+// int e(int x,int n){
+//     static int s=1;
+//     if(n==0){
+//         return s;
+//     }
+//     else{
+//         s=1+(x/n)*s;
+//         return e(x,n-1);
+
+//     }
+// }
+
+// int main(){
+//     cout<<e(10000,17);
+//     return 0;
+// }
+
+//?????????????????????????????
+
+double e(double x, double n){
+    static double s=1;
     if(n==0){
         return s;
     }
     else{
         s=1+(x/n)*s;
         return e(x,n-1);
-
     }
-}
 
+}
 int main(){
-    cout<<e(10000,17);
+    cout<<e(1,15);
     return 0;
 }
