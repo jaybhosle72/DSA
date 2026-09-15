@@ -44,17 +44,36 @@ using namespace std;
 
 //?????????????????????????????
 
-double e(double x, double n){
-    static double s=1;
-    if(n==0){
-        return s;
+// double e(double x, double n){
+//     static double s=1;
+//     if(n==0){
+//         return s;
+//     }
+//     else{
+//         s=1+(x/n)*s;
+//         return e(x,n-1);
+//     }
+
+// }
+// int main(){
+//     cout<<e(1,15);
+//     return 0;
+// }
+// ITERATIVE WAY : 
+double e(double x,double n){
+    double s=1;
+    double p=1;
+    double f=1;
+    for(int i=1;i<=n;i++){
+        p=p*x;
+        f=f*i;
+        s=s+(p/f);
     }
-    else{
-        s=1+(x/n)*s;
-        return e(x,n-1);
-    }
+    
+    return s;
 
 }
+
 int main(){
     cout<<e(1,15);
     return 0;
