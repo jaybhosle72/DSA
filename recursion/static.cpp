@@ -9,6 +9,7 @@ int fun(int a){
         return fun(a-1)+x;
     }
     return 0;
+
 }
 
 
@@ -17,4 +18,6 @@ int fun(int a){
 int main(){
     int a=5;
     cout<<fun(a);
+
+
 }
