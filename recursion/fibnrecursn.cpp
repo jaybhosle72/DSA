@@ -50,6 +50,7 @@ int fib(int n){
     f[n]=f[n-2]+f[n-1];
     return f[n-2]+f[n-1];
 
+
 }
 
 int main(){
@@ -59,4 +60,6 @@ int main(){
     }
     cout<<fib(6);
     return 0;
+
+
 }
