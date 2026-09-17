@@ -11,4 +11,6 @@ void fun(int n){
 int main(){
     fun(3);
     return 0;
+
+
 }
