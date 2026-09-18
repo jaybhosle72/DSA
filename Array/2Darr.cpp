@@ -14,26 +14,49 @@ int main(){
 
     // Array of pointer inside the stack:
 
-    int *A[3];
+    // int *A[3];
+    // A[0]=new int[4];
+    // A[1]=new int[4];
+    // A[2]=new int[4];
+
+    // for(int i=0;i<3;i++){
+    //     for(int j=0;j<4;j++){
+    //         A[i][j]=i*j;
+    //     }
+    // }
+    
+    // for(int i=0;i<3;i++){
+    //     for(int j=0;j<4;j++){
+    //         cout<<A[i][j]<<endl;
+    //     }
+    // }
+
+    // for(int i=0;i<3;i++){
+    //     delete[] A[i];
+    // }
+
+    // Double Pointer 
+
+    int **A;
+    A=new int*[3];//array of pointers it is 
     A[0]=new int[4];
     A[1]=new int[4];
     A[2]=new int[4];
 
     for(int i=0;i<3;i++){
         for(int j=0;j<4;j++){
-            A[i][j]=i*j;
+            A[i][j]=(i+1)*10+j;
         }
     }
-    
+
     for(int i=0;i<3;i++){
         for(int j=0;j<4;j++){
-            cout<<A[i][j]<<endl;
+            cout<<A[i][j];
         }
+        cout<<"\n";
     }
 
-    for(int i=0;i<3;i++){
-        delete[] A[i];
-    }
 
-    cout<<A[0][1];
+
+    
 }
