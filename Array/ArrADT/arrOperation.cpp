@@ -8,7 +8,7 @@ struct arr
     int size;
     int length;
 };
-
+//display function
 void display(struct arr arr1)
 {
     int i;
@@ -18,7 +18,29 @@ void display(struct arr arr1)
     }
     
 }
+//append or add at end of array
+void append(arr &arr1,int n){
+    arr1.A[arr1.length]=n;
+    arr1.length++;
+    
+}
 
+
+//insert at any index 
+
+int insert(arr &arr1,int idx,int n){
+    int i;
+    for(i=arr1.length;i>idx;i--){
+        arr1.A[i]=arr1.A[i-1];
+        
+    }
+    if(idx==i){
+        arr1.A[i]=n;
+        arr1.length++;
+    }
+    return 0;
+
+}
 
 int main(){
     struct arr arr1;
@@ -27,12 +49,16 @@ int main(){
     cin>>arr1.size;
     arr1.A=new int[arr1.size];
     arr1.length=0;
+    cout<<"enter lenght of array:";
+    cin>>arr1.length;
 
     
     cout<<"enter all element"<<endl;
-    for(i=0;i<arr1.size;i++){
+    for(i=0;i<arr1.length;i++){
         cin>>arr1.A[i];
     }
-    arr1.length=arr1.size;
+
+    //insert(arr1,1,10);
+    append(arr1,4);
     display(arr1);
 }
