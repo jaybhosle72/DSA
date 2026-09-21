@@ -7,6 +7,12 @@ struct Array
     int lenght=6;
     int size=6;
 };
+
+void display(struct Array arr){
+    for(int i=0;i<arr.lenght;i++){
+        cout<<arr.A[i]<<endl;
+    }
+}
 //normal linear search 
 int linearS(struct Array &arr,int n){
     for(int i=0;i<arr.lenght;i++){
@@ -18,10 +24,46 @@ int linearS(struct Array &arr,int n){
 
 }
 
+//improving linear search 
+//transposition method : whenever a number searched it comes one index ahead 
+void swap(int *x,int *y){
+    int temp;
+    temp=*x;
+    *x=*y;
+    *y=temp;
+}
+int transposition(struct Array *arr,int n){
+    for(int i=0;i<arr->lenght;i++){
+        if(arr->A[i]==n){
+            swap(&arr->A[i],&arr->A[i-1]);
+            cout<<"found:"<<n<<"at:"<<i<<endl;
+        }
+        
+    }
+    return 0;
+}
+
+// int movetohead(struct Array *arr,int n){
+//     for(int i=0;i<arr->lenght;i++){
+//         if(arr->A[i]==n){
+//             swap(&arr->A[i],&arr->A[0]);
+//             cout<<"found:"<<n<<"at:"<<i<<endl;
+//         }
+        
+//     }
+//     return 0;
+    
+// }
+
+
+
 
 int main(){
     struct Array arr;
-    linearS(arr,1);
+    //linearS(arr,1);
+    display(arr);
+    cout<<movetohead(&arr,5);
+    display(arr);
     return 0;
 }
     
