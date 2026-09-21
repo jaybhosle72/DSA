@@ -43,17 +43,17 @@ int transposition(struct Array *arr,int n){
     return 0;
 }
 
-// int movetohead(struct Array *arr,int n){
-//     for(int i=0;i<arr->lenght;i++){
-//         if(arr->A[i]==n){
-//             swap(&arr->A[i],&arr->A[0]);
-//             cout<<"found:"<<n<<"at:"<<i<<endl;
-//         }
+int movetohead(struct Array *arr,int n){
+    for(int i=0;i<arr->lenght;i++){
+        if(arr->A[i]==n){
+            swap(&arr->A[i],&arr->A[0]);
+            cout<<"found:"<<n<<"at:"<<i<<endl;
+        }
         
-//     }
-//     return 0;
+    }
+    return 0;
     
-// }
+}
 
 
 
