@@ -46,6 +46,8 @@ int recursbinary(struct Array *arr,int l,int h,int key){
         }
         else{
             return recursbinary(arr,l,mid-1,key);
+        
+        
         }
         
     }
