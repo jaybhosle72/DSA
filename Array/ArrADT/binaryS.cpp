@@ -38,6 +38,7 @@ int recursbinary(struct Array *arr,int l,int h,int key){
     if(l<=h){
         mid=(l+h)/2;
         if(arr->A[mid]==key){
+            cout<<"mil gaya";
             return mid;
         }
         else if (arr->A[mid]<key)
@@ -51,6 +52,7 @@ int recursbinary(struct Array *arr,int l,int h,int key){
         }
         
     }
+    cout<<"nahi mila";
     return -1;
 }
 
