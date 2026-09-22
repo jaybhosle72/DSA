@@ -33,24 +33,24 @@ int binary(struct Array *arr,int n){
 
 //recursive way :
 
-// int recursbinary(struct Array *arr,int l,int h,int key){
-//     int mid;
-//     if(l<=h){
-//         mid=(l+h)/2;
-//         if(arr->A[mid]==key){
-//             return mid;
-//         }
-//         else if (arr->A[mid]<key)
-//         {
-//             return recursbinary(arr,mid+1,h,key);
-//         }
-//         else{
-//             return recursbinary(arr,l,mid-1,key);
-//         }
+int recursbinary(struct Array *arr,int l,int h,int key){
+    int mid;
+    if(l<=h){
+        mid=(l+h)/2;
+        if(arr->A[mid]==key){
+            return mid;
+        }
+        else if (arr->A[mid]<key)
+        {
+            return recursbinary(arr,mid+1,h,key);
+        }
+        else{
+            return recursbinary(arr,l,mid-1,key);
+        }
         
-//     }
-//     return -1;
-// }
+    }
+    return -1;
+}
 
 
 
@@ -62,7 +62,7 @@ int main(){
     struct Array arr;
     int l=0;
     int h=arr.length-1;
-    cout<<binary(&arr,8);
+    cout<<recursbinary(&arr,l,h,8);
     return 0;
 
 
