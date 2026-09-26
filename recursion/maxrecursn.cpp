@@ -14,7 +14,16 @@ void display(struct Array arr){
     }
 }
 
-
+int max(struct Array arr,int n){
+    static int m=arr.A[0];
+    if(n<arr.length){
+        if(m<arr.A[n+1]){
+            m=arr.A[n+1];
+        }
+        max(arr,n+1);
+    }
+    return m;
+}
 
 
 int main(){
@@ -28,6 +37,7 @@ int main(){
     }
 
     display(arr);
+    cout<<"max element is : "<<max(arr,0);
 
 
 
