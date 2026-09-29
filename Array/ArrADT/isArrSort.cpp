@@ -14,11 +14,12 @@ int issorted(struct Array *arr){
             return 0;
         }
         
-        
     }
     cout<<"sorted"<<endl;
     return 0;
 }
+
+
 
 
 int main(){
