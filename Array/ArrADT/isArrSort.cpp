@@ -19,7 +19,30 @@ int issorted(struct Array *arr){
     return 0;
 }
 
+void insert(struct Array *arr,int num){
+    if(arr->length<arr->size){
+        int i=0;
+        for( i;i<arr->length;i++){
+            if(arr->A[i]<num && num<arr->A[i+1]){
+                for(int j=arr->length;j>i+1;j--){
+                    swap(arr->A[j],arr->A[j-1]);
+                }
+                arr->A[i+1]=num;
+                arr->length=arr->length+1;
+                break;
+                
+            }
+        }
+        
+    }
+    
+}
 
+void display(struct Array *arr){
+    for(int i=0;i<arr->length;i++){
+        cout<<arr->A[i]<<endl;
+    }
+}
 
 
 int main(){
@@ -32,5 +55,9 @@ int main(){
         cin>>arr.A[i];
     }
 
+    cout<<"before inserting :",display(&arr);
+    insert(&arr,3);
+
+    cout<<"after inserting :",display(&arr);
     issorted(&arr);
 }
