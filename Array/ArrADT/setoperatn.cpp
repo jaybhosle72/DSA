@@ -75,33 +75,59 @@ void union2(struct Array *a1,struct Array *a2,struct Array *a3){
 
 }
 
+void intersection(struct Array *a1,struct Array *a2,struct Array *a3){
+    int k=0;
+    for(int i=0;i<a1->length;i++){
+        for(int j=0;j<a2->length;j++){
+            if(a1->A[i]==a2->A[j]){
+                a3->A[k]=a1->A[i];
+                k++;
+            }
+        }
+    }
+    a3->length=k;
+    
+}
+
+void differ(struct Array *a1,struct Array *a2,struct Array *a3){
+    int k=0;
+    
+    for(int i=0; i<a1->length;i++){
+        bool isfound=false;
+        for(int j=0;j<a2->length;j++){
+            if(a1->A[i]==a2->A[j]){
+                isfound=true;
+                break;
+            }
+        }
+        if(isfound==false){
+            a3->A[k]=a1->A[i];
+            k++;
+        }
+    }
+    a3->length=k;
+}
+
 
 int main(){
     int ar[]={3,5,7,9,11};
     struct Array a1={ar,5,5};
-    int ar1[]={2,5,6,8,11};
+    int ar1[]={2,1,6,5,11};
     struct Array a2={ar1,5,5};
     int ar2[10]={};
     struct Array a3={ar2,10,0};
-
-    // cout<<"before union arr 1: :"<<endl;
-    // dis(&a1); 
-    // cout<<endl;
-    // cout<<"before union arr 1: :"<<endl;
-    // dis(&a2); 
-    // cout<<endl;
-    // union1(&a1,&a2,&a3);
-    // cout<<"after union :"<<endl;
-    // dis(&a3);
     
-    cout<<"before union2 arr 1: :"<<endl;
+    cout<<" arr 1: :"<<endl;
     dis(&a1); 
     cout<<endl;
-    cout<<"before union2 arr 2: :"<<endl;
+    cout<<" arr 2: :"<<endl;
     dis(&a2); 
     cout<<endl;
-    union2(&a1,&a2,&a3);
-    cout<<"after union2 :"<<endl;
+    // union1(&a1,&a2,&a3);     //for unsorted array
+    //union2(&a1,&a2,&a3);        //for sorted array
+    //intersection(&a1,&a2,&a3);
+    differ(&a1,&a2,&a3);
+    cout<<"after difference  :"<<endl;
     dis(&a3);
 
 
