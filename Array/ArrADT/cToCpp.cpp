@@ -24,7 +24,7 @@ class Array{
 
         void Display();
         void Insert(int index,T x);
-        int Delete(int index);
+        T Delete(int index);
 };
 
 template<class T>
@@ -49,7 +49,7 @@ void Array<T>::Insert(int index,T x){
     }
 }
 template<class T>
-int Array<T>::Delete(int index){
+T Array<T>::Delete(int index){
     T n;
     if(index>=0 && index<length){
         n=A[index];
@@ -71,6 +71,10 @@ int main(){
     arr.Insert(2,3);
     arr.Insert(3,4);
     arr.Display();
-    arr.Delete(3);
+    cout<<"\n";
+    
+    cout<<"deleted: "<<arr.Delete(3);
+
+    cout<<endl;
     arr.Display();
 }
