@@ -1,39 +1,40 @@
 #include<iostream>
 using namespace std;
-
+template <class T>
 class Array{
     private:
-        int *A;
+        T *A;
         int size;
         int length;
 
     public:
         Array(){
             size=10;
-            A=new int[size];
+            A=new T[size];
             length=0;
         }
         Array(int sz){
             size=sz;
             length=0;
-            A=new int[size];
+            A=new T[size];
         }
         ~Array(){
             delete []A;
         }
 
         void Display();
-        void Insert(int index,int x);
+        void Insert(int index,T x);
         int Delete(int index);
 };
 
-void Array::Display(){
+template<class T>
+void Array<T>::Display(){
     for(int i=0;i<length;i++){
         cout<<A[i]<<" ";
     }
 }
-
-void Array::Insert(int index,int x){
+template<class T>
+void Array<T>::Insert(int index,T x){
     if(length==size){
         return;
     }
@@ -47,9 +48,9 @@ void Array::Insert(int index,int x){
         length+=1;
     }
 }
-
-int Array::Delete(int index){
-    int n;
+template<class T>
+int Array<T>::Delete(int index){
+    T n;
     if(index>=0 && index<length){
         n=A[index];
         int i=index;
@@ -64,7 +65,7 @@ int Array::Delete(int index){
 }
 
 int main(){
-    Array arr(10);
+    Array<float> arr(10);
     arr.Insert(0,1);
     arr.Insert(1,2);
     arr.Insert(2,3);
